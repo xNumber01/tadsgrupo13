@@ -70,17 +70,18 @@ function setupEventListeners() {
   btnLogoutHeader.addEventListener('click', handleLogout);
   document.getElementById('btnLogoutResult').addEventListener('click', handleLogout);
 
-  // Botão Escolher Outro Quiz
+ // Botão Escolher Outro Quiz
   document.getElementById('btnChooseAnotherQuiz').addEventListener('click', () => {
     showScreen(screenCategory);
     renderCategories();
   });
+}
+
 function handleLogin(e) {
   e.preventDefault();
   const emailDigitado = document.getElementById('loginEmail').value.trim();
   const pass = document.getElementById('loginPassword').value.trim();
 
-  // A inclusão de "u.email &&" previne que o sistema pare se um utilizador não possuir e-mail
   const user = users.find(u => u.email && u.email.toLowerCase() === emailDigitado.toLowerCase());
 
   if (!user) {
@@ -93,8 +94,6 @@ function handleLogin(e) {
     return;
   }
 
-  loginUser(user);
-}
   loginUser(user);
 }
 
